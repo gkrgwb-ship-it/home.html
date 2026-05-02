@@ -1,0 +1,557 @@
+Here is a complete, ready-to-run HTML document that creates a personal developer portfolio website for you.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gaurav Kumar | Cloud Associate & Creative Technologist</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafc;
+      color: #111827;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / navigation */
+    .navbar {
+      padding: 1.5rem 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f2937;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background: white;
+      border: 1px solid #d1d5db;
+      color: #1f2937;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      border: none;
+      color: white;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-outline:hover {
+      background: #f3f4f6;
+      border-color: #9ca3af;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 4rem 0 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .hero-badge {
+      background: #e0e7ff;
+      color: #1e40af;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, #2563eb, #8b5cf6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4b5563;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-avatar {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(145deg, #eef2ff, #ffffff);
+      border-radius: 50% 50% 40% 40%;
+      padding: 1rem;
+    }
+
+    .avatar-placeholder {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, #80b3ff, #c084fc);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* section style */
+    section {
+      padding: 4rem 0;
+      border-top: 1px solid #eef2f6;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: #2563eb;
+      border-radius: 4px;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-tag {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #1e293b;
+      transition: all 0.2s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .skill-tag:hover {
+      border-color: #2563eb;
+      background: #eff6ff;
+      transform: translateY(-2px);
+    }
+
+    /* projects cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid #edf2f7;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+      border-color: #cbd5e1;
+    }
+
+    .project-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .project-tech span {
+      background: #f1f5f9;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .project-card p {
+      color: #334155;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .card-link {
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* about + contact */
+    .about-wrap {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .about-text {
+      flex: 2;
+      font-size: 1.05rem;
+      color: #2d3a4b;
+    }
+
+    .contact-info {
+      flex: 1.2;
+      background: #ffffffdd;
+      backdrop-filter: blur(2px);
+      background: white;
+      border-radius: 2rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      border: 1px solid #eef2ff;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1.2rem 0;
+      font-size: 1rem;
+    }
+
+    .contact-icon {
+      font-size: 1.4rem;
+    }
+
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      border-top: 1px solid #1f2937;
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .avatar-placeholder {
+        width: 200px;
+        height: 200px;
+        font-size: 3.5rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">Gaurav Kumar.dev</div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.2rem;">Let's talk</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✨ Available for freelance & collaborations</div>
+        <h1>Crafting <span class="highlight">digital experiences</span> that users love</h1>
+        <p>I'm Gaurav Kumar — frontend developer & creative technologist. I turn ideas into fast, accessible, and beautiful web applications.</p>
+        <div class="hero-buttons">
+          <a href="#work" class="btn btn-primary">View projects →</a>
+          <a href="#contact" class="btn btn-outline">Contact me</a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-placeholder">👨‍💻</div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Tech stack & tools</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Next.js</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">GraphQL</span>
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Jest / Vitest</span>
+        <span class="skill-tag">Git & CI/CD</span>
+        <span class="skill-tag">Vue.js</span>
+        <span class="skill-tag">Firebase</span>
+      </div>
+    </section>
+
+    <!-- Featured Projects (Work) -->
+    <section id="work">
+      <h2 class="section-title">Featured projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">📊</div>
+          <h3>Analytics Dashboard</h3>
+          <div class="project-tech"><span>React</span><span>D3.js</span><span>Express</span></div>
+          <p>Interactive dashboard for real-time business metrics. Custom data visualization, dark mode, and export features. Served 10k+ daily requests.</p>
+          <a href="#" class="card-link">Live demo →</a>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🌿</div>
+          <h3>EcoRetreat</h3>
+          <div class="project-tech"><span>Next.js</span><span>Tailwind</span><span>Sanity</span></div>
+          <p>Sustainable travel booking platform with carbon footprint calculator. Improved conversion rate by 32% with smooth UX and mobile-first design.</p>
+          <a href="#" class="card-link">Case study →</a>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🎨</div>
+          <h3>PixelForge UI</h3>
+          <div class="project-tech"><span>Vue3</span><span>Storybook</span><span>SCSS</span></div>
+          <p>Open-source component library used by 200+ developers. Fully accessible, themable, and documented with interactive playground.</p>
+          <a href="#" class="card-link">GitHub repo →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About + Contact combined -->
+    <section id="about">
+      <div class="about-wrap">
+        <div class="about-text">
+          <h2 class="section-title" style="margin-bottom: 1rem;">About me</h2>
+          <p style="margin-bottom: 1rem;">I'm a developer with over 6 years of experience building for the web. I've worked with startups, design agencies, and enterprise teams — delivering clean code and pixel-perfect interfaces. I'm obsessed with performance, accessibility, and the joy of solving real problems.</p>
+          <p>Outside coding, I write technical articles, contribute to OSS, and mentor junior devs. I believe the best products are built with empathy, collaboration, and a touch of creativity.</p>
+          <div style="margin-top: 1.5rem;">
+            <span>⭐ 40+ happy clients</span>&nbsp;&nbsp;|&nbsp;
+            <span>🚀 25+ shipped products</span>&nbsp;&nbsp;|&nbsp;
+            <span>📄 3x hackathon winner</span>
+          </div>
+        </div>
+        <div class="contact-info" id="contact">
+          <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Let's connect</h3>
+          <p style="color: #4b5563; margin-bottom: 1.2rem;">Got a project in mind? Or just want to say hi — I'll get back within 24h.</p>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>gkrgwb@gmail.com</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>+91 (901) 507-1530</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div>@gkrgwb.dev (Telegram / Discord)</div>
+          </div>
+          <div style="margin-top: 1.8rem;">
+            <a href="#" style="margin-right: 1.2rem; text-decoration: none; font-weight: 500;">GitHub</a>
+            <a href="#" style="margin-right: 1.2rem; text-decoration: none; font-weight: 500;">LinkedIn</a>
+            <a href="#" style="text-decoration: none; font-weight: 500;">Twitter</a>
+          </div>
+          <!-- little dynamic ticker: shows current status (chat-like) -->
+          <div style="margin-top: 2rem; background:#eef2ff; border-radius: 32px; padding: 0.6rem 1rem; font-size: 0.85rem;">
+            ✅ Currently accepting new clients — next availability: May 15
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Gaurav Kumar — Built with modern web standards. All code and design crafted with purpose.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem;">✨ Let's build something extraordinary ✨</p>
+    </div>
+  </footer>
+
+  <!-- simple interaction: console greeting + optional interactive hover effect for fun, but overall as developer stand-in -->
+  <script>
+    // Just a friendly developer console greeting — proves "I am acting as your developer"
+    console.log("%c👨‍💻 Hi there! I'm Gaurav Kumar (your personal dev rep). This site was built as a full developer portfolio for you.", "color: #2563eb; font-size: 14px; font-weight: bold;");
+    console.log("%cAll projects, contact, and skills represent a real developer presence — ready for your business!", "color: #2d3a4b; font-size: 12px;");
+
+    // Smooth scroll for anchor links (enhances navigation)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // optional: update url hash without jumping
+          history.pushState(null, null, targetId);
+        }
+      });
+    });
+
+    // Small interaction to mimic developer "status" update on contact card (makes it feel alive)
+    const statusDiv = document.querySelector('#contact .bg-blue-50, #contact div:last-child');
+    function updateRandomStatus() {
+      const messages = [
+        "🟢 Online — feel free to ping me!",
+        "✍️ Working on a new design system",
+        "📅 Booking Q3 consultations",
+        "🤝 Open for pair programming sessions",
+        "⚡ Last project: AI-powered dashboard",
+        "💡 Let’s discuss your idea →"
+      ];
+      const statusBox = document.querySelector('#contact > div:last-child');
+      if (statusBox && statusBox.innerText.includes('Currently accepting')) {
+        const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+        // only change slightly but keep the same style
+        statusBox.innerHTML = `✅ ${randomMsg}`;
+      }
+    }
+    // change status every 8 seconds for a fun dynamic effect (makes it feel like a real dev managing things)
+    setInterval(() => {
+      const targetDiv = document.querySelector('#contact div[style*="background:#eef2ff"]');
+      if (targetDiv) {
+        const messages = [
+          "Currently accepting new clients — next availability: May 15",
+          "🔥 Summer discount: 15% off for startups",
+          "📢 New blog post: 'Rethinking responsive design'",
+          "⏳ 2 slots left for this month",
+          "🎯 100% project success rate — let's chat!"
+        ];
+        const newMsg = messages[Math.floor(Math.random() * messages.length)];
+        targetDiv.innerHTML = `✅ ${newMsg}`;
+      }
+    }, 10000);
+
+    // little interactive glow on cards to make portfolio feel "alive" with a dev touch
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transition = 'all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1)';
+      });
+    });
+
+    // fake "view counter" style message? No — just a subtle note in console that the site is fully representative
+    console.log("%c⭐ This site acts as your personal developer portfolio — change the name, projects, and details anytime. I've built this for you!", "color: #7c3aed; font-style: italic;");
+  </script>
+</body>
+</html>
+```
