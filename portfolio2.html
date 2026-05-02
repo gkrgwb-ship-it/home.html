@@ -1,1 +1,528 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Gaurav Kumar | Platform Support Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafc;
+      color: #111827;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .navbar {
+      padding: 1.5rem 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f2937;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.3rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      background: white;
+      border: 1px solid #d1d5db;
+      color: #1f2937;
+      font-size: 0.9rem;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      border: none;
+      color: white;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 3rem 0 4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .hero-badge {
+      background: #e0e7ff;
+      color: #1e40af;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, #2563eb, #8b5cf6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1rem;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .avatar-placeholder {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: white;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      padding: 3rem 0;
+      border-top: 1px solid #eef2f6;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #2563eb;
+      margin-top: 6px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .skill-tag {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .skill-tag:hover {
+      border-color: #2563eb;
+      background: #eff6ff;
+      transform: translateY(-2px);
+    }
+
+    .exp-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.3rem;
+      margin-bottom: 1.3rem;
+      border: 1px solid #edf2f7;
+      transition: all 0.25s;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .exp-company {
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .exp-date {
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+
+    .exp-desc {
+      color: #334155;
+      margin-top: 0.7rem;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .exp-desc ul {
+      margin-left: 1.2rem;
+    }
+
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #eef2f6;
+    }
+
+    .metric {
+      background: #f8fafc;
+      padding: 0.3rem 0.8rem;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e40af;
+    }
+
+    .about-wrap {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 2;
+    }
+
+    .contact-info {
+      flex: 1.2;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.3rem;
+      border: 1px solid #eef2ff;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0.9rem 0;
+      font-size: 0.88rem;
+      word-break: break-word;
+    }
+
+    .contact-item a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .status-box {
+      margin-top: 1.5rem;
+      background: #e0e7ff;
+      border-radius: 28px;
+      padding: 0.7rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      .avatar-placeholder {
+        width: 140px;
+        height: 140px;
+        font-size: 3rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">Gaurav Kumar | Platform Support</div>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn-primary">Hire Me</a>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✨ Open for Platform Support / Production Support Roles</div>
+        <h1>Platform Support <span class="highlight">Engineer</span></h1>
+        <p>3+ years providing L1/L2 operational support for multi-tier applications on Linux (RHEL/CentOS) across AWS environments. Resolved 100+ production incidents and 350+ service requests within SLA.</p>
+        <div class="hero-buttons">
+          <a href="#experience" class="btn btn-primary">View Experience →</a>
+          <a href="Gaurav_Res_April.pdf" class="btn btn-outline" download>Download Resume (PDF)</a>
+        </div>
+      </div>
+      <div class="avatar-placeholder">☁️</div>
+    </div>
+
+    <!-- SKILLS SECTION - Complete with ELK Stack -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">AWS (EC2, VPC, IAM, S3, Route 53, CloudWatch)</span>
+        <span class="skill-tag">Linux (RHEL/CentOS) - CLI, Process Management, Log Analysis</span>
+        <span class="skill-tag">Docker & Kubernetes (EKS) - kubectl, pod troubleshooting</span>
+        <span class="skill-tag">ELK Stack (Elasticsearch, Logstash, Kibana)</span>
+        <span class="skill-tag">Python (Basic scripting for log parsing)</span>
+        <span class="skill-tag">Networking: TCP/IP, DNS, Security Groups, NACL, Load Balancers</span>
+        <span class="skill-tag">ServiceNow & Jira</span>
+        <span class="skill-tag">Bash Scripting</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">Production Support Engineer</span>
+          <span class="exp-date">Sep 2024 – Present</span>
+        </div>
+        <div class="exp-header">
+          <span class="exp-company">TECH MAHINDRA</span>
+          <span class="exp-location">Bengaluru</span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Managed and resolved 100+ production incidents and 350+ change requests within SLA using ServiceNow for 25+ enterprise multi-tier applications with 99.9%+ availability.</li>
+            <li>Administered Linux servers (RHEL/CentOS) via CLI for process management, service control, and incident triage for production EC2 instances.</li>
+            <li>Diagnosed platform connectivity issues using Linux networking commands (netstat, dig, nslookup, curl, traceroute).</li>
+            <li>Resolved AWS VPC issues including Security Groups, NACLs, routing tables, and Route 53 DNS.</li>
+            <li>Reduced MTTR by 30% by deploying ELK Stack and CloudWatch monitoring with automated alert rules.</li>
+            <li>Supported Kubernetes (EKS) and Docker workloads; diagnosed pod failures and container restarts using kubectl and Docker CLI.</li>
+            <li>Authored 20+ platform runbooks covering Linux, AWS, and Kubernetes failure scenarios.</li>
+          </ul>
+        </div>
+        <div class="metrics">
+          <span class="metric">📊 100+ incidents resolved</span>
+          <span class="metric">⚡ 30% MTTR reduction</span>
+          <span class="metric">📝 20+ runbooks authored</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">Support Engineer</span>
+          <span class="exp-date">Oct 2022 – Jun 2024</span>
+        </div>
+        <div class="exp-header">
+          <span class="exp-company">INVIA</span>
+          <span class="exp-location">Noida</span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Provided L1/L2 platform support for 25+ production microservices in a high-availability payment system.</li>
+            <li>Resolved 80+ incidents and 250+ service requests within SLA with zero critical breaches.</li>
+            <li>Administered Linux environments on AWS EC2, including patching, service management, and performance tuning.</li>
+            <li>Resolved AWS platform issues involving EC2, VPC, IAM, and Load Balancers.</li>
+            <li>Implemented ELK Stack and CloudWatch monitoring, reducing production downtime by 25%.</li>
+          </ul>
+        </div>
+        <div class="metrics">
+          <span class="metric">📊 80+ incidents resolved</span>
+          <span class="metric">📉 25% downtime reduction</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">Quality Associate</span>
+          <span class="exp-date">2020 – 2022</span>
+        </div>
+        <div class="exp-header">
+          <span class="exp-company">ALORICA INDIA PVT LTD</span>
+          <span class="exp-location">Bengaluru</span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Quality Audits, CRM management, and SLA monitoring.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">Digital Advisor</span>
+          <span class="exp-date">2017 – 2019</span>
+        </div>
+        <div class="exp-header">
+          <span class="exp-company">24/7 AI</span>
+          <span class="exp-location">Bengaluru</span>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Inside sales, cross-sales, and basic troubleshooting.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & CONTACT SECTION -->
+    <section id="about">
+      <div class="about-wrap">
+        <div class="about-text">
+          <h2 class="section-title">About Me</h2>
+          <p><strong>Platform Support Engineer</strong> with 3+ years of experience in Linux (RHEL/CentOS) and AWS environments. Passionate about reducing MTTR, automating alerts, and building runbooks. Looking for Platform Support, Production Support, or NOC Engineer roles.</p>
+          <p style="margin-top: 1rem;"><strong>Education:</strong> B.E, Computer Science | BPUT University (2015)</p>
+        </div>
+        <div class="contact-info" id="contact">
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Contact</h3>
+          <div class="contact-item">📧 gauravkr21kumar@gmail.com</div>
+          <div class="contact-item">📱 +91-6361213897</div>
+          <div class="contact-item">📍 Bengaluru, India</div>
+          <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/gaurav-kumar-923132169" target="_blank">linkedin.com/in/gaurav-kumar-923132169</a></div>
+          <div class="status-box">
+            ✅ Available for Platform Support / NOC roles — Immediate
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Gaurav Kumar — Platform Support Engineer | AWS | Linux | ELK Stack</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = this.getAttribute('href');
+        if (target === "#" || target === "") return;
+        const el = document.querySelector(target);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Dynamic status message changes every 10 seconds
+    const statusBox = document.querySelector('.status-box');
+    if (statusBox) {
+      const messages = [
+        "✅ Available for Platform Support / NOC roles — Immediate",
+        "🟢 Open to interviews this week — Bangalore",
+        "📧 gauravkr21kumar@gmail.com — reply within 2 hours",
+        "☁️ 3+ years AWS & Linux experience",
+        "💼 Ready to join immediately"
+      ];
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % messages.length;
+        statusBox.innerHTML = messages[index];
+      }, 8000);
+    }
+
+    console.log("%c Gaurav Kumar | Platform Support Engineer | ELK Stack | AWS | Linux", "color: #2563eb; font-size: 14px; font-weight: bold;");
+  </script>
+</body>
+</html>
